@@ -1,7 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+
+{% load static %}
+
     <h2>New post</h2>
+    <script src = "{% static 'postform.js' %}"></script>
+    {{ form.media }}
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-secondary">Save</button>
